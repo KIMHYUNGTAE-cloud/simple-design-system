@@ -1,0 +1,17 @@
+.sds-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.sds-search__icon {
+  position: absolute;
+  left: var(--sds-size-space-300);
+  pointer-events: none;
+  color: var(--sds-color-icon-default-secondary);
+}
+
+.sds-search__input {
+  padding-left: calc(var(--sds-size-space-400) + 24px);
+  border-radius: var(--sds-size-radius-full);
+}

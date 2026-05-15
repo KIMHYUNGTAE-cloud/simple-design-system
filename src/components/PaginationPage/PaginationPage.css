@@ -1,0 +1,37 @@
+.sds-pagination-page {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sds-size-space-200) var(--sds-size-space-300);
+  background: transparent;
+  border: 0;
+  border-radius: var(--sds-size-radius-200);
+  font-family: var(--sds-typography-body-font-family);
+  font-size: var(--sds-typography-body-size-medium);
+  font-weight: var(--sds-typography-body-font-weight-regular);
+  line-height: 1;
+  color: var(--sds-color-text-default-default);
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.sds-pagination-page:hover:not(:disabled) {
+  background-color: var(--sds-color-background-default-default-hover);
+}
+
+.sds-pagination-page[data-current='true'] {
+  background-color: var(--sds-color-background-brand-default);
+  color: var(--sds-color-text-brand-on-brand);
+}
+
+.sds-pagination-page[data-current='true']:hover:not(:disabled) {
+  background-color: var(--sds-color-background-brand-hover);
+}
+
+.sds-pagination-page:disabled {
+  color: var(--sds-color-text-disabled-default);
+  cursor: not-allowed;
+}

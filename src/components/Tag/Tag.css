@@ -1,0 +1,114 @@
+.sds-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sds-size-space-200);
+  padding: var(--sds-size-space-200);
+  border-radius: var(--sds-size-radius-200);
+  font-family: var(--sds-typography-body-font-family);
+  font-size: var(--sds-typography-body-size-medium);
+  font-weight: var(--sds-typography-body-font-weight-regular);
+  line-height: 1;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.sds-tag__label {
+  display: inline-block;
+}
+
+.sds-tag__remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Brand */
+.sds-tag[data-scheme='brand'][data-variant='primary'] {
+  background-color: var(--sds-color-background-brand-default);
+  color: var(--sds-color-text-brand-on-brand);
+}
+.sds-tag[data-scheme='brand'][data-variant='primary']:hover {
+  background-color: var(--sds-color-background-brand-hover);
+}
+.sds-tag[data-scheme='brand'][data-variant='secondary'] {
+  background-color: var(--sds-color-background-brand-tertiary);
+  color: var(--sds-color-text-brand-on-brand-tertiary);
+}
+.sds-tag[data-scheme='brand'][data-variant='secondary']:hover {
+  background-color: var(--sds-color-background-brand-tertiary-hover);
+}
+
+/* Neutral */
+.sds-tag[data-scheme='neutral'][data-variant='primary'] {
+  background-color: var(--sds-color-background-default-tertiary);
+  color: var(--sds-color-text-default-default);
+}
+.sds-tag[data-scheme='neutral'][data-variant='primary']:hover {
+  background-color: var(--sds-color-background-default-tertiary-hover);
+}
+.sds-tag[data-scheme='neutral'][data-variant='secondary'] {
+  background-color: var(--sds-color-background-default-secondary);
+  color: var(--sds-color-text-default-default);
+}
+.sds-tag[data-scheme='neutral'][data-variant='secondary']:hover {
+  background-color: var(--sds-color-background-default-secondary-hover);
+}
+
+/* Danger */
+.sds-tag[data-scheme='danger'][data-variant='primary'] {
+  background-color: var(--sds-color-background-danger-default);
+  color: var(--sds-color-text-danger-on-danger);
+}
+.sds-tag[data-scheme='danger'][data-variant='primary']:hover {
+  background-color: var(--sds-color-background-danger-hover);
+}
+.sds-tag[data-scheme='danger'][data-variant='secondary'] {
+  background-color: var(--sds-color-background-danger-secondary);
+  color: var(--sds-color-text-danger-on-danger-secondary);
+}
+.sds-tag[data-scheme='danger'][data-variant='secondary']:hover {
+  background-color: var(--sds-color-background-danger-secondary-hover);
+}
+
+/* Positive */
+.sds-tag[data-scheme='positive'][data-variant='primary'] {
+  background-color: var(--sds-color-background-positive-default);
+  color: var(--sds-color-text-positive-on-positive);
+}
+.sds-tag[data-scheme='positive'][data-variant='primary']:hover {
+  background-color: var(--sds-color-background-positive-hover);
+}
+.sds-tag[data-scheme='positive'][data-variant='secondary'] {
+  background-color: var(--sds-color-background-positive-secondary);
+  color: var(--sds-color-text-positive-on-positive-secondary);
+}
+.sds-tag[data-scheme='positive'][data-variant='secondary']:hover {
+  background-color: var(--sds-color-background-positive-secondary-hover);
+}
+
+/* Warning */
+.sds-tag[data-scheme='warning'][data-variant='primary'] {
+  background-color: var(--sds-color-background-warning-default);
+  color: var(--sds-color-text-warning-on-warning);
+}
+.sds-tag[data-scheme='warning'][data-variant='primary']:hover {
+  background-color: var(--sds-color-background-warning-hover);
+}
+.sds-tag[data-scheme='warning'][data-variant='secondary'] {
+  background-color: var(--sds-color-background-warning-secondary);
+  color: var(--sds-color-text-warning-on-warning-secondary);
+}
+.sds-tag[data-scheme='warning'][data-variant='secondary']:hover {
+  background-color: var(--sds-color-background-warning-secondary-hover);
+}

@@ -1,0 +1,97 @@
+.sds-notification {
+  position: relative;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--sds-size-space-300);
+  width: 300px;
+  padding: var(--sds-size-space-400);
+  border-width: var(--sds-size-stroke-border);
+  border-style: solid;
+  border-radius: var(--sds-size-radius-200);
+  font-family: var(--sds-typography-body-font-family);
+  font-size: var(--sds-typography-body-size-medium);
+  line-height: 1.4;
+}
+
+.sds-notification[data-variant='message'] {
+  background-color: var(--sds-color-background-default-default);
+  border-color: var(--sds-color-border-default-secondary);
+  color: var(--sds-color-text-default-default);
+}
+
+.sds-notification[data-variant='alert'] {
+  background-color: var(--sds-color-background-danger-tertiary);
+  border-color: var(--sds-color-border-danger-tertiary);
+  color: var(--sds-color-text-danger-on-danger-tertiary);
+}
+
+.sds-notification__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.sds-notification__stack {
+  display: flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  gap: var(--sds-size-space-400);
+  min-width: 0;
+}
+
+.sds-notification__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-size-space-100);
+  width: 100%;
+}
+
+.sds-notification__title {
+  margin: 0;
+  font-weight: var(--sds-typography-body-font-weight-strong);
+  color: inherit;
+}
+
+.sds-notification__body {
+  margin: 0;
+  font-weight: var(--sds-typography-body-font-weight-regular);
+  color: inherit;
+}
+
+.sds-notification__action {
+  display: inline-flex;
+}
+
+.sds-notification__dismiss {
+  position: absolute;
+  top: var(--sds-size-space-200);
+  right: var(--sds-size-space-200);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sds-size-space-200);
+  background: transparent;
+  border: 0;
+  border-radius: var(--sds-typography-scale-06);
+  color: inherit;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.sds-notification[data-variant='alert'] .sds-notification__dismiss {
+  width: var(--sds-typography-scale-07);
+  height: var(--sds-typography-scale-07);
+  padding: var(--sds-size-padding-md);
+}
+
+.sds-notification__dismiss > svg {
+  width: 20px;
+  height: 20px;
+}
+
+.sds-notification[data-variant='alert'] .sds-notification__dismiss > svg {
+  width: 16px;
+  height: 16px;
+}

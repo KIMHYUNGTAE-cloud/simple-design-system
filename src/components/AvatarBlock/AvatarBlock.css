@@ -1,0 +1,20 @@
+.sds-avatar-block {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sds-size-space-200);
+  font-family: var(--sds-typography-body-font-family);
+}
+.sds-avatar-block__avatar { flex-shrink: 0; }
+.sds-avatar-block__text { display: inline-flex; flex-direction: column; }
+.sds-avatar-block__title {
+  font-size: var(--sds-typography-body-size-medium);
+  font-weight: var(--sds-typography-body-font-weight-strong);
+  color: var(--sds-color-text-default-default);
+  line-height: 1.4;
+}
+.sds-avatar-block__subtitle {
+  font-size: var(--sds-typography-body-size-small);
+  font-weight: var(--sds-typography-body-font-weight-regular);
+  color: var(--sds-color-text-default-secondary);
+  line-height: 1.4;
+}

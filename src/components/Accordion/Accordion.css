@@ -1,0 +1,6 @@
+.sds-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sds-size-space-200);
+  width: 100%;
+}

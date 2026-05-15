@@ -1,0 +1,5 @@
+.sds-tag-toggle-group {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sds-size-space-200);
+}

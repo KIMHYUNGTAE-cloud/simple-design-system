@@ -1,0 +1,93 @@
+.sds-calendar {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--sds-size-space-300);
+  padding: var(--sds-size-space-300);
+  background-color: var(--sds-color-background-default-default);
+  border: var(--sds-size-stroke-border) solid var(--sds-color-border-default-default);
+  border-radius: var(--sds-size-radius-200);
+  font-family: var(--sds-typography-body-font-family);
+}
+
+.sds-calendar__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sds-size-space-200);
+}
+
+.sds-calendar__title {
+  flex: 1 0 0;
+  text-align: center;
+  font-size: var(--sds-typography-body-size-medium);
+  font-weight: var(--sds-typography-body-font-weight-strong);
+  color: var(--sds-color-text-default-default);
+}
+
+.sds-calendar__nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: var(--sds-size-radius-200);
+  color: var(--sds-color-icon-default-default);
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.sds-calendar__nav:hover {
+  background-color: var(--sds-color-background-default-default-hover);
+}
+
+.sds-calendar__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 40px);
+  gap: var(--sds-size-space-100);
+}
+
+.sds-calendar-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: var(--sds-size-radius-full);
+  font-family: var(--sds-typography-body-font-family);
+  font-size: var(--sds-typography-body-size-medium);
+  color: var(--sds-color-text-default-default);
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.sds-calendar-button:hover:not(:disabled) {
+  background-color: var(--sds-color-background-default-default-hover);
+}
+
+.sds-calendar-button[data-selected='true'] {
+  background-color: var(--sds-color-background-brand-default);
+  color: var(--sds-color-text-brand-on-brand);
+}
+
+.sds-calendar-button[data-selected='true']:hover:not(:disabled) {
+  background-color: var(--sds-color-background-brand-hover);
+}
+
+.sds-calendar-button[data-in-range='true']:not([data-selected='true']) {
+  background-color: var(--sds-color-background-brand-tertiary);
+  color: var(--sds-color-text-brand-default);
+  border-radius: 0;
+}
+
+.sds-calendar-button:disabled {
+  color: var(--sds-color-text-disabled-default);
+  cursor: not-allowed;
+}

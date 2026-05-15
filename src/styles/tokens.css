@@ -1,0 +1,227 @@
+/**
+ * simple-design-system / tokens.css
+ *
+ * 본 파일은 Figma Community "Simple Design System" 의 Variables 를 Phase 2/3
+ * 분석(37 회 get_variable_defs 호출, atomic 컴포넌트 + Forms 7개 + Sections
+ * 25+개의 대표 variant 에 대해 수행) 결과로 추출한 CSS 변수 정의이다.
+ *
+ * - 변수 이름은 Figma 원본의 `--sds-*` prefix 를 그대로 보존(FR-007 · spec
+ *   Phase 2 Clarifications).
+ * - 분석 시점에 Figma 파일에서 **다크 모드 토큰은 발견되지 않았다**. 따라서
+ *   본 v0.1.0 은 라이트 토큰만 제공한다(spec Edge Case 정합). 추후 Figma 에
+ *   dark 토큰이 추가되면 본 파일 하단에 `[data-theme="dark"] {}` 블록 추가.
+ * - 일부 Calendar 컴포넌트가 외부 library(Geist 기반) 의 typography 토큰을
+ *   참조하는 것이 발견되었으나, 본 패키지에는 포함하지 않는다(혼동 방지).
+ *   해당 처리는 Calendar 컴포넌트 구현 시 개별 fallback 으로 진행.
+ */
+
+:root {
+  /* =====================================================================
+     Color · Primitive scale (alpha black overlays + brand chroma)
+     ===================================================================== */
+  --sds-color-black-100: #0c0c0d0d;
+  --sds-color-black-200: #0c0c0d1a;
+  --sds-color-black-400: #0c0c0d66;
+  --sds-color-black-500: #0c0c0db2;
+  --sds-color-pink-500: #ea3fb8;
+  --sds-color-red-500: #ec221f;
+  --sds-color-yellow-600: #bf6a02;
+  --sds-color-green-500: #14ae5c;
+  --sds-color-slate-200: #e3e3e3;
+
+  /* =====================================================================
+     Color · Semantic — background
+     ===================================================================== */
+  --sds-color-background-default-default: #ffffff;
+  --sds-color-background-default-default-hover: #f5f5f5;
+  --sds-color-background-default-secondary: #f5f5f5;
+  --sds-color-background-default-secondary-hover: #e6e6e6;
+  --sds-color-background-default-tertiary: #d9d9d9;
+  --sds-color-background-default-tertiary-hover: #b3b3b3;
+  --sds-color-background-brand-default: #2c2c2c;
+  --sds-color-background-brand-hover: #1e1e1e;
+  --sds-color-background-brand-secondary: #e6e6e6;
+  --sds-color-background-brand-tertiary: #f5f5f5;
+  --sds-color-background-brand-tertiary-hover: #e6e6e6;
+  --sds-color-background-neutral-tertiary: #e3e3e3;
+  --sds-color-background-neutral-tertiary-hover: #cdcdcd;
+  --sds-color-background-danger-default: #ec221f;
+  --sds-color-background-danger-hover: #c00f0c;
+  --sds-color-background-danger-secondary: #fdd3d0;
+  --sds-color-background-danger-secondary-hover: #fcb3ad;
+  --sds-color-background-danger-tertiary: #fee9e7;
+  --sds-color-background-positive-default: #14ae5c;
+  --sds-color-background-positive-hover: #009951;
+  --sds-color-background-positive-secondary: #cff7d3;
+  --sds-color-background-positive-secondary-hover: #aff4c6;
+  --sds-color-background-warning-default: #e8b931;
+  --sds-color-background-warning-hover: #e5a000;
+  --sds-color-background-warning-secondary: #fff1c2;
+  --sds-color-background-warning-secondary-hover: #ffe8a3;
+  --sds-color-background-disabled-default: #d9d9d9;
+  --sds-color-background-utilities-scrim: #ffffffcc;
+
+  /* =====================================================================
+     Color · Semantic — border
+     ===================================================================== */
+  --sds-color-border-default-default: #d9d9d9;
+  --sds-color-border-default-secondary: #757575;
+  --sds-color-border-brand-default: #2c2c2c;
+  --sds-color-border-brand-tertiary: #757575;
+  --sds-color-border-danger-default: #900b09;
+  --sds-color-border-danger-secondary: #c00f0c;
+  --sds-color-border-danger-tertiary: #ec221f;
+  --sds-color-border-neutral-default: #303030;
+  --sds-color-border-neutral-secondary: #767676;
+  --sds-color-border-neutral-tertiary: #b2b2b2;
+  --sds-color-border-disabled-default: #b3b3b3;
+
+  /* =====================================================================
+     Color · Semantic — text
+     ===================================================================== */
+  --sds-color-text-default-default: #1e1e1e;
+  --sds-color-text-default-secondary: #757575;
+  --sds-color-text-default-tertiary: #b3b3b3;
+  --sds-color-text-neutral-default: #303030;
+  --sds-color-text-neutral-tertiary: #767676;
+  --sds-color-text-brand-default: #2c2c2c;
+  --sds-color-text-brand-tertiary: #757575;
+  --sds-color-text-brand-on-brand: #f5f5f5;
+  --sds-color-text-brand-on-brand-secondary: #1e1e1e;
+  --sds-color-text-brand-on-brand-tertiary: #2c2c2c;
+  --sds-color-text-danger-default: #900b09;
+  --sds-color-text-danger-on-danger: #fee9e7;
+  --sds-color-text-danger-on-danger-secondary: #900b09;
+  --sds-color-text-danger-on-danger-tertiary: #900b09;
+  --sds-color-text-positive-on-positive: #ebffee;
+  --sds-color-text-positive-on-positive-secondary: #02542d;
+  --sds-color-text-warning-on-warning: #401b01;
+  --sds-color-text-warning-on-warning-secondary: #682d03;
+  --sds-color-text-disabled-default: #b3b3b3;
+  --sds-color-text-disabled-on-disabled: #b3b3b3;
+  --sds-color-text-utilities-text-on-overlay: #0c0c0d;
+
+  /* =====================================================================
+     Color · Semantic — icon
+     ===================================================================== */
+  --sds-color-icon-default-default: #1e1e1e;
+  --sds-color-icon-default-secondary: #757575;
+  --sds-color-icon-default-tertiary: #b3b3b3;
+  --sds-color-icon-brand-default: #2c2c2c;
+  --sds-color-icon-brand-on-brand: #f5f5f5;
+  --sds-color-icon-brand-on-brand-secondary: #1e1e1e;
+  --sds-color-icon-brand-on-brand-tertiary: #2c2c2c;
+  --sds-color-icon-danger-on-danger: #fee9e7;
+  --sds-color-icon-danger-on-danger-secondary: #900b09;
+  --sds-color-icon-positive-on-positive: #ebffee;
+  --sds-color-icon-warning-on-warning: #401b01;
+  --sds-color-icon-disabled-on-disabled: #b3b3b3;
+
+  /* =====================================================================
+     Size · Space
+     ===================================================================== */
+  --sds-size-space-0: 0;
+  --sds-size-space-050: 2px;
+  --sds-size-space-100: 4px;
+  --sds-size-space-150: 6px;
+  --sds-size-space-200: 8px;
+  --sds-size-space-300: 12px;
+  --sds-size-space-400: 16px;
+  --sds-size-space-600: 24px;
+  --sds-size-space-800: 32px;
+  --sds-size-space-1200: 48px;
+  --sds-size-space-1600: 64px;
+  --sds-size-space-4000: 160px;
+
+  /* =====================================================================
+     Size · Radius
+     ===================================================================== */
+  --sds-size-radius-100: 4px;
+  --sds-size-radius-200: 8px;
+  --sds-size-radius-400: 16px;
+  --sds-size-radius-full: 9999px;
+  --sds-radius-md: 8px;
+
+  /* =====================================================================
+     Size · Stroke / border-width
+     ===================================================================== */
+  --sds-size-stroke-border: 1px;
+  --sds-responsive-border-width: 1px;
+
+  /* =====================================================================
+     Size · Icon
+     ===================================================================== */
+  --sds-size-icon-small: 24px;
+  --sds-size-icon-medium: 32px;
+  --sds-size-icon-large: 40px;
+
+  /* =====================================================================
+     Size · Depth (shadow offsets/radius)
+     ===================================================================== */
+  --sds-size-depth-0: 0;
+  --sds-size-depth-025: 1px;
+  --sds-size-depth-100: 4px;
+  --sds-size-depth-400: 16px;
+  --sds-size-depth-800: 32px;
+  --sds-size-depth-negative-100: -4px;
+
+  /* =====================================================================
+     Size · Padding alias
+     ===================================================================== */
+  --sds-size-padding-md: 12px;
+  --sds-size-padding-lg: 16px;
+  --sds-typography-scale-07: 40px;
+
+  /* =====================================================================
+     Responsive
+     ===================================================================== */
+  --sds-responsive-device-width: 1200px;
+
+  /* =====================================================================
+     Typography · Font family
+     ===================================================================== */
+  --sds-typography-body-font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --sds-typography-subheading-font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --sds-typography-heading-font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --sds-typography-subtitle-font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --sds-typography-title-page-font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --sds-typography-title-hero-font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --sds-typography-code-font-family: "Roboto Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  /* =====================================================================
+     Typography · Font size
+     ===================================================================== */
+  --sds-typography-body-size-small: 14px;
+  --sds-typography-body-size-medium: 16px;
+  --sds-typography-subheading-size-medium: 20px;
+  --sds-typography-subtitle-size-small: 24px;
+  --sds-typography-subtitle-size-base: 32px;
+  --sds-typography-heading-size-base: 24px;
+  --sds-typography-title-page-size-base: 48px;
+  --sds-typography-title-hero-size: 72px;
+  --sds-typography-code-size-base: 16px;
+  --sds-typography-scale-06: 32px;
+
+  /* =====================================================================
+     Typography · Font weight
+     ===================================================================== */
+  --sds-typography-body-font-weight-regular: 400;
+  --sds-typography-body-font-weight-strong: 600;
+  --sds-typography-subheading-font-weight: 400;
+  --sds-typography-heading-font-weight: 600;
+  --sds-typography-subtitle-font-weight: 400;
+  --sds-typography-title-page-font-weight: 700;
+  --sds-typography-title-hero-font-weight: 700;
+  --sds-typography-code-font-weight: 400;
+
+  /* =====================================================================
+     Typography · Font style
+     ===================================================================== */
+  --sds-typography-body-font-style-italic: italic;
+
+  /* =====================================================================
+     Shadow · Drop shadow composites (Figma effect → CSS box-shadow)
+     ===================================================================== */
+  --sds-shadow-200: 0 var(--sds-size-depth-025) var(--sds-size-depth-100) 0 var(--sds-color-black-100), 0 var(--sds-size-depth-025) var(--sds-size-depth-100) 0 var(--sds-color-black-200);
+  --sds-shadow-400: 0 var(--sds-size-depth-100) var(--sds-size-depth-100) var(--sds-size-depth-negative-100) var(--sds-color-black-100), 0 var(--sds-size-depth-400) var(--sds-size-depth-800) var(--sds-size-depth-negative-100) var(--sds-color-black-200);
+}

@@ -1,0 +1,16 @@
+.sds-datepicker {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.sds-datepicker__control {
+  padding-right: calc(var(--sds-size-space-400) + 20px);
+}
+
+.sds-datepicker__icon {
+  position: absolute;
+  right: var(--sds-size-space-300);
+  pointer-events: none;
+  color: var(--sds-color-icon-default-secondary);
+}

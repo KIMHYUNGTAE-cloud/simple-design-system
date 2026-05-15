@@ -1,0 +1,80 @@
+.sds-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sds-size-space-200);
+  border-radius: var(--sds-size-radius-200);
+  border-width: var(--sds-size-stroke-border);
+  border-style: solid;
+  border-color: transparent;
+  font-family: var(--sds-typography-body-font-family);
+  font-size: var(--sds-typography-body-size-medium);
+  font-weight: var(--sds-typography-body-font-weight-regular);
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  color: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.sds-button[data-size='md'] {
+  padding: var(--sds-size-space-300);
+}
+.sds-button[data-size='sm'] {
+  padding: var(--sds-size-space-200);
+}
+
+.sds-button[data-variant='primary'] {
+  background-color: var(--sds-color-background-brand-default);
+  border-color: var(--sds-color-border-brand-default);
+  color: var(--sds-color-text-brand-on-brand);
+}
+.sds-button[data-variant='primary']:hover:not(:disabled) {
+  background-color: var(--sds-color-background-brand-hover);
+}
+
+.sds-button[data-variant='neutral'] {
+  background-color: var(--sds-color-background-neutral-tertiary);
+  border-color: var(--sds-color-border-neutral-secondary);
+  color: var(--sds-color-text-default-default);
+}
+.sds-button[data-variant='neutral']:hover:not(:disabled) {
+  background-color: var(--sds-color-background-neutral-tertiary-hover);
+}
+
+.sds-button[data-variant='subtle'] {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--sds-color-text-neutral-default);
+}
+.sds-button[data-variant='subtle']:hover:not(:disabled) {
+  border-color: var(--sds-color-border-default-default);
+}
+
+.sds-button:disabled {
+  background-color: var(--sds-color-background-disabled-default);
+  border-color: var(--sds-color-border-disabled-default);
+  color: var(--sds-color-text-disabled-on-disabled);
+  cursor: not-allowed;
+}
+
+.sds-button:focus-visible {
+  outline: 2px solid var(--sds-color-border-brand-default);
+  outline-offset: 2px;
+}
+
+.sds-button__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.sds-button__label {
+  display: inline-block;
+}

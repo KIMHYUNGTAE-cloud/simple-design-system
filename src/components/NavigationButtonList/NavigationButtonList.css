@@ -1,0 +1,17 @@
+.sds-nav-button-list,
+.sds-nav-pill-list {
+  display: inline-flex;
+  gap: var(--sds-size-space-100);
+}
+
+.sds-nav-button-list[data-direction='row'],
+.sds-nav-pill-list[data-direction='row'] {
+  flex-direction: row;
+  align-items: center;
+}
+
+.sds-nav-button-list[data-direction='column'],
+.sds-nav-pill-list[data-direction='column'] {
+  flex-direction: column;
+  align-items: stretch;
+}

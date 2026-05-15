@@ -1,0 +1,25 @@
+.sds-nav-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sds-size-space-200) var(--sds-size-space-300);
+  background: transparent;
+  border: 0;
+  border-radius: var(--sds-size-radius-full);
+  font-family: var(--sds-typography-body-font-family);
+  font-size: var(--sds-typography-body-size-small);
+  font-weight: var(--sds-typography-body-font-weight-strong);
+  color: var(--sds-color-text-default-secondary);
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.sds-nav-pill:hover:not(:disabled) {
+  background-color: var(--sds-color-background-default-default-hover);
+}
+
+.sds-nav-pill[data-active='true'] {
+  background-color: var(--sds-color-background-brand-default);
+  color: var(--sds-color-text-brand-on-brand);
+}

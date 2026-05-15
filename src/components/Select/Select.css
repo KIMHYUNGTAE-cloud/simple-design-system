@@ -1,0 +1,17 @@
+.sds-select {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.sds-select__control {
+  padding-right: calc(var(--sds-size-space-400) + 20px);
+  cursor: pointer;
+}
+
+.sds-select__chevron {
+  position: absolute;
+  right: var(--sds-size-space-300);
+  pointer-events: none;
+  color: var(--sds-color-icon-default-secondary);
+}

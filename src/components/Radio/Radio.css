@@ -1,0 +1,87 @@
+.sds-radio-field {
+  display: inline-flex;
+  flex-direction: column;
+  font-family: var(--sds-typography-body-font-family);
+}
+
+.sds-radio-field__row {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sds-size-space-300);
+  min-width: 120px;
+  cursor: pointer;
+  font-size: var(--sds-typography-body-size-medium);
+  color: var(--sds-color-text-default-default);
+}
+
+.sds-radio-field__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.sds-radio-field__circle {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  background-color: var(--sds-color-background-default-default);
+  border: var(--sds-size-stroke-border) solid var(--sds-color-border-brand-tertiary);
+  border-radius: var(--sds-size-radius-full);
+}
+
+.sds-radio-field__input:checked + .sds-radio-field__circle {
+  border-color: var(--sds-color-background-brand-default);
+}
+
+.sds-radio-field__input:checked + .sds-radio-field__circle::after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--sds-color-background-brand-default);
+  border-radius: var(--sds-size-radius-full);
+}
+
+.sds-radio-field[data-disabled='true'] .sds-radio-field__circle {
+  background-color: var(--sds-color-background-disabled-default);
+  border-color: var(--sds-color-border-disabled-default);
+}
+
+.sds-radio-field[data-disabled='true'] .sds-radio-field__input:checked + .sds-radio-field__circle::after {
+  background-color: var(--sds-color-text-disabled-on-disabled);
+}
+
+.sds-radio-field[data-disabled='true'] .sds-radio-field__row {
+  cursor: not-allowed;
+}
+
+.sds-radio-field__input:focus-visible + .sds-radio-field__circle {
+  outline: 2px solid var(--sds-color-border-brand-default);
+  outline-offset: 2px;
+}
+
+.sds-radio-field__label {
+  flex: 1 0 0;
+  line-height: 1.4;
+}
+
+.sds-radio-field__description {
+  margin: 0;
+  margin-left: calc(16px + var(--sds-size-space-300));
+  font-size: var(--sds-typography-body-size-medium);
+  line-height: 1.4;
+  color: var(--sds-color-text-default-secondary);
+}
+
+.sds-radio-field[data-disabled='true'] .sds-radio-field__description {
+  opacity: 0.5;
+}

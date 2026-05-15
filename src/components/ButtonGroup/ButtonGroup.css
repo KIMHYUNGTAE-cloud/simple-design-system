@@ -1,0 +1,10 @@
+.sds-button-group {
+  display: flex;
+  align-items: center;
+  gap: var(--sds-size-space-400);
+}
+.sds-button-group[data-align='start'] { justify-content: flex-start; }
+.sds-button-group[data-align='end'] { justify-content: flex-end; }
+.sds-button-group[data-align='center'] { justify-content: center; }
+.sds-button-group[data-align='justify'] { justify-content: space-between; }
+.sds-button-group[data-align='stack'] { flex-direction: column; align-items: stretch; }

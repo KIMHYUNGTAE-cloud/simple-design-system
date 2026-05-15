@@ -1,0 +1,7 @@
+.sds-avatar-group {
+  display: inline-flex;
+  align-items: center;
+}
+.sds-avatar-group[data-spacing='overlap'] > * + * { margin-left: -8px; }
+.sds-avatar-group[data-spacing='overlap'] > * { box-shadow: 0 0 0 2px var(--sds-color-background-default-default); border-radius: var(--sds-size-radius-full); }
+.sds-avatar-group[data-spacing='spaced'] { gap: var(--sds-size-space-200); }
