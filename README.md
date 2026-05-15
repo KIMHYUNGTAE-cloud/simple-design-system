@@ -154,4 +154,14 @@ MIT — see [LICENSE](./LICENSE). Copyright © 2026 Hyungtae Kim.
 
 ### Design original
 
-This package is a code reproduction of **Simple Design System** by the Figma team, published on the [Figma Community](https://www.figma.com/community). The visual design — token values, component shapes, variant matrix — is the work of the original authors and is reused under the [Figma Community license terms](https://help.figma.com/hc/en-us/articles/360039162653-Figma-Community-content-and-the-Community-license).
+This package is a code reproduction of **Simple Design System**, a UI kit built by Figma and published on the Figma Community under **[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)**.
+
+- Original Figma file: <https://www.figma.com/community/file/1380235722331273046/simple-design-system-community>
+- Figma's official reference repository: <https://github.com/figma/sds>
+- License: CC BY 4.0
+
+The visual design — token values, component shapes, variant matrix — is the work of Figma. This package reimplements that design as React + CSS Variables; the code is a separate work under MIT (see above), and attribution for the design is given to Figma per CC BY 4.0.
+
+Per the official description:
+
+> The Simple Design System is a UI kit built by Figma to help you get started faster using pre-built examples and components. It covers Figma's best practices for building a basic design system, and includes a full range of resources to enable core design use cases — like designing for web, mobile, and more. Key features: full-screen example mockups, 400+ components (Code Connect on paid plans), styles and variables (light/dark), and commonly used icons. Figma's Simple Design System UI Kit is licensed by Figma under CC BY 4.0.
